@@ -14,16 +14,26 @@ a {
 }
 
 article {
-  grid-column: 2;
+  grid-area: 2 / 2;
   background: url('images/cover-image.jpg') 50% 100% no-repeat;
   min-height: 600px;
   min-width: 300px;
   background-size: cover;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 800px 1fr;
+  grid-template-rows: 1fr 100px 100px 100px 1fr;
+}
+
+article > p {
+  color: white;
+  margin: 0;
 }
 
 aside {
   grid-area: 2 / 2 / 2 / 2;
   padding-top: 2px;
+  grid-row: 3;
 }
 
 aside ul {
@@ -51,6 +61,7 @@ footer {
   display: grid;
   grid-template-columns: 1fr 980px 1fr;
   margin: 25px 0;
+  grid-row: 4;
 }
 
 footer > ul {
@@ -97,4 +108,38 @@ footer-map-grid li:first-child {
 .terms-and-privacy a {
   border-left: 1px solid #ccc;
   padding: 0 6px;
+}
+
+header nav ul {
+  display: grid;
+  position: absolute;
+
+  grid-template-columns: repeat(9, 110px);
+  place-items: center;
+  height: 30px;
+  padding: 0;
+  background: linear-gradient(rgb(143, 143, 143) 15px, grey 15px);
+}
+
+header nav ul li {
+  color: white;
+  align-self: center;
+}
+
+.sentence-1 {
+  grid-area: 2 / 2;
+  font-size: 60px;
+  align-self: end;
+}
+
+.sentence-2 {
+  grid-area: 3 / 2;
+  font-size: 32px;
+  text-align: center;
+}
+.sentence-3 {
+  grid-area: 4 / 2;
+  font-size: 28px;
+  align-self: start;
+  padding-top: 15px;
 }
